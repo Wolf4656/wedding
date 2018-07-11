@@ -1,0 +1,69 @@
+:root{
+  --main-font-family: "Helvetica";
+  --main-bg-color: "";
+}
+
+html{
+  height: 100%;
+  min-height: 100%;
+  font-family: var(--main-font-family);
+}
+
+header{
+  padding: 0px;
+}
+
+body{
+  background-color: White;
+  color: #373737;
+  font-family: var(--main-font-family);
+}
+
+footer{
+  text-align: center;
+  width:100%;
+  height:200px;
+  border-width:1px 0;
+  bottom: 0;
+  left: 0;
+  color: white;
+  background-color: #434245;
+  overflow: hidden;
+}
+
+.container{
+  min-height: 400px;
+}
+
+.d-block w-100{
+  overflow: hidden;
+}
+
+#carousel {
+  height: 100%;
+  width: 100%;
+  max-height: 400px;
+  overflow: hidden;
+}
+
+.nav-container{
+  position: relative;
+  text-align: center;
+  margin-left: 39%;
+  margin-right: 39%;
+}
+
+.nav-link{
+}
+
+.home {
+  text-align: center;
+  margin-top: 5%;
+}
+
+.website-text{
+  text-align: left;
+  margin-top: 2.5%;
+  margin-left: 20%;
+  margin-right: 20%;
+}
