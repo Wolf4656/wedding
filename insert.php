@@ -1,5 +1,7 @@
 <?php
 
+include 'select.php';
+
 class Insert {
   /*
   this function returns the connection to the db
@@ -9,21 +11,18 @@ class Insert {
 
     //prepare
     if(!$statement = $connection->prepare(
-    "INSERT INTO participants (tag, name, region, rsvpCode)
-     VALUES (?,?,?, ?)")){
-       die ("Guest entry failed: " . $connection->error);
+    "INSERT INTO guests (firstName, lastName, password, rsvpCode)
+     VALUES (?,?,?,?)")){
+       die ("guest entry failed: " . $connection->error);
      }
      //Bind
-     if(!$statement->bind_param("sss", $firstName, $lastName, $password, $rsvpCode))
-       die("Smasher bind failed: " . $statement->error);
+     if(!$statement->bind_param("ssss", $firstName, $lastName, $password, $rsvpCode))
+       die("guest bind failed: " . $statement->error);
      //execute
      if(!$statement->execute()) {
-       die("Smasher execute failed: " . $statement->error);
+       die("guest execute failed: " . $statement->error);
     }
     return true;
   }
  }
-
-
-}
 ?>

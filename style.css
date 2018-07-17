@@ -1,6 +1,7 @@
 :root{
   --main-font-family: "Helvetica";
-  --main-bg-color: "";
+  --main-bg-color: #425D7F;
+  --main-link-color: #76A7E5;
 }
 
 html{
@@ -27,8 +28,12 @@ footer{
   bottom: 0;
   left: 0;
   color: white;
-  background-color: #434245;
+  background-color: var(--main-bg-color);
   overflow: hidden;
+}
+
+a {
+  color: var(--main-link-color);
 }
 
 .container{
@@ -47,13 +52,19 @@ footer{
 }
 
 .nav-container{
+  background-color: var(--main-bg-color);
   position: relative;
   text-align: center;
+
+}
+
+.navbar{
   margin-left: 39%;
   margin-right: 39%;
 }
 
 .nav-link{
+  color: var(--main-link-color);
 }
 
 .home {

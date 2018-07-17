@@ -5,7 +5,7 @@ include "insert.php";
 //Set up variables
 $firstName = $_POST ["firstName"];
 $lastName = $_POST ["lastName"];
-$password = $_POST ["password"];
+$password = password_hash($_POST ["password"], PASSWORD_DEFAULT);
 $rsvpCode = generateUniqueToken(6);
 
 function isToken($token)
@@ -13,9 +13,10 @@ function isToken($token)
     if (isset($token) && $token) {
 
         //verification values in BD
+        $connection = Select::connect();
         $query = "SELECT rsvpCode FROM guests WHERE rsvpCode='$token'";
-        $sql = mysql_query($query);
-        if (mysql_num_rows($sql) > 0) {
+        $sql = $connection->query($query);
+        if (mysqli_num_rows($sql) > 0) {
             return true;
         } else {
             return false;
@@ -38,7 +39,7 @@ function generateUniqueToken($number)
                  '1', '2', '3', '4', '5', '6',
                  '7', '8', '9', '0');
     $token = "";
-    for ($i = 0; $i < $_number; $i++) {
+    for ($i = 0; $i < $number; $i++) {
         $index = rand(0, count($arr) - 1);
         $token .= $arr[$index];
   }
