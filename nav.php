@@ -17,6 +17,9 @@
         <li class="nav-item">
           <a class="nav-link" href="guests.php">Guest List</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" href="login.php">Login</a>
+        </li>
     </div>
   </nav>
 </div>

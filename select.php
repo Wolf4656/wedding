@@ -22,6 +22,14 @@ class Select {
     }
  }
 
+ public static function selectGuests(){
+   $connection = Select::connect();
+   $sql = "SELECT * FROM guests";
+   $guests = $connection->query($sql);
+   $connection->close();
+   return $guests;
+ }
+
 
 }
 ?>
