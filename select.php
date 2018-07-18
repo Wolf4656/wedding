@@ -24,7 +24,7 @@ class Select {
 
  public static function selectGuests(){
    $connection = Select::connect();
-   $sql = "SELECT * FROM guests";
+   $sql = "SELECT * FROM guests WHERE attending = 1";
    $guests = $connection->query($sql);
    $connection->close();
    return $guests;
