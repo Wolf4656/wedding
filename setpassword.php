@@ -8,6 +8,7 @@
       <input type="username" class="form-control" id="username" aria-describedby="username" name="username" placeholder="Enter Username">
   <label for="password">Password</label>
       <input type="password" class="form-control" id="password" aria-describedby="password" name="password" placeholder="Enter Password">
+      <input type="hidden" class="form-control" id="rsvpCode" aria-describedby="rsvpCode" name="rsvpCode" value="<?php echo $_GET ["rsvpCode"];?>">
       <button type="submit" class="btn btn-primary">Submit</button>
 </form>
 

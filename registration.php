@@ -6,4 +6,4 @@
       <button type="submit" class="btn btn-primary">Submit</button>
 </form>
 
-<?php include 'footer.php' ?>
+<?php include 'footer.php'; ?>
