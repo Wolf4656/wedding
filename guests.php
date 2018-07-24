@@ -20,6 +20,11 @@
     <tr>
       <td><?php echo $content["firstName"]; ?></td>
       <td><?php echo $content["lastName"]; ?></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
     </tr>
   <?php } ?>
   </tbody>
