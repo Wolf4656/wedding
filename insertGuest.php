@@ -5,8 +5,11 @@ include "insert.php";
 //Set up variables
 $firstName = $_POST ["firstName"];
 $lastName = $_POST ["lastName"];
-$password = password_hash($_POST ["password"], PASSWORD_DEFAULT);
 $rsvpCode = generateUniqueToken(6);
+$password = password_hash($_POST ["password"], PASSWORD_DEFAULT);
+
+$fullName = $firstName . " " . $lastName;
+$username = substr($firstName, 0,1) . $lastName . generateUniqueToken(3);
 
 function isToken($token)
 {
@@ -52,10 +55,11 @@ function generateUniqueToken($number)
 }
 
 
-if(Insert::insertGuest($firstName, $lastName, $password, $rsvpCode)){
+if(Insert::insertGuest($firstName, $lastName, $fullName, $username, $password, $rsvpCode)){
 echo "SUCCESS";
 header('Location: http://localhost:9001/controlpanel.php');
 } else {
 echo "ERROR";
+VAR_DUMP($_POST, $rsvpCode);
 }
 ?>

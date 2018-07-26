@@ -2,17 +2,16 @@
 session_start();
 
 include "select.php";
-//fix dis shit yo
 $username = $_POST["username"];
 $password = $_POST["password"];
-$password = password_hash($password, PASSWORD_DEFAULT);
+$hashed_password = Select::getHashedPassword($username);
 
-var_dump($_POST, $password);
+//var_dump($_POST, $hashed_password);
 
-if (Select::signIn($username, $password)) {
+if(password_verify($password, $hashed_password)) {
   $_SESSION["username"] = $username;
-  //header('Location: /profile.php');
+  header('Location: /profile.php');
 } else {
-  //header('Location: /login.php');
+  header('Location: /login.php');
 }
 ?>

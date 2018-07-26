@@ -30,26 +30,6 @@ class Select {
    return $guests;
  }
 
- public static function signIn($username, $password){
-   $connection = Select::connect();
-   $statement = $connection->prepare("
-     SELECT password FROM guests WHERE username = ?
-   ");
-   if(!$statement->bind_param("s", $username)){
-    die("User bind failed: " . $statement->error);
-  }
-   if(!$statement->execute()){
-     die("User execute failed: " . $statement->error);
-   }
-   $statement->bind_result($hashpassword);
-   $statement->fetch();
-   if($hashpassword === $password) {
-     return true;
-   }else{
-     return false;
-     }
-   }
-
    public static function uniqueUserName($username){
      $connection = Select::connect();
      $statement = $connection->prepare("
@@ -69,6 +49,23 @@ class Select {
      }else{
        return true;
        }
+   }
+
+   public static function getHashedPassword($username){
+     $connection = Select::connect();
+     $statement = $connection->prepare("
+       SELECT password FROM guests WHERE username = ?
+     ");
+     if(!$statement->bind_param("s", $username)){
+      die("User bind failed: " . $statement->error);
+    }
+     if(!$statement->execute()){
+       die("User execute failed: " . $statement->error);
+     }
+     $statement->bind_result($result);
+     $statement->fetch();
+     $connection->close();
+     return $result;
    }
 
 }

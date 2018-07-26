@@ -23,8 +23,8 @@ body{
 
 footer{
   text-align: center;
-  margin-left: 23%;
-  width: 55%;
+  margin-left: 20%;
+  width: 60%;
   height: 200px;
   border-width:1px 0;
   bottom: 0;
@@ -40,7 +40,8 @@ a {
 
 .container{
   background-color: White;
-  width: 55%;
+  min-width: 60%;
+  margin-left: 20%;
   min-height: 400px;
 }
 
@@ -61,19 +62,25 @@ a {
   margin-left: 20%;
   width: 60%;
   background-color: var(--second-bg-color);
-  position: relative;
   text-align: center;
-
+  list-style: none;
 }
 
-.navbar{
-  margin-left: 25%;
-  margin-right: 25%;
-  width: 50%;
+.nav-container li{
+  display: inline;
+}
+
+.navbar-nav{
+  text-align: center;
+}
+
+.navbar-item{
+  display: inline;
 }
 
 .nav-link{
   color: var(--main-link-color);
+  display: inline-block;
 }
 
 .home {

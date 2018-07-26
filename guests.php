@@ -8,8 +8,7 @@
 <table class="table">
   <thead>
     <tr>
-      <th scope="col">First Name</th>
-      <th scope="col">Last Name</th>
+      <th scope="col">Name</th>
     </tr>
   </thead>
   <tbody>
@@ -18,8 +17,7 @@
     $content = $results->fetch_assoc();
   ?>
     <tr>
-      <td><?php echo $content["firstName"]; ?></td>
-      <td><?php echo $content["lastName"]; ?></td>
+      <td><?php echo $content["fullName"]; ?></td>
       <td></td>
       <td></td>
       <td></td>
